@@ -48,6 +48,8 @@
   --radius-circle: 50%;
 
   --transition-short: 100ms ease;
+
+  --linear-gradient-main: linear-gradient(to right, #333399, #ff00cc);
 }
 
 /* Reset CSS básico */
@@ -62,11 +64,8 @@
 
 html,
 body {
-  height: 100%;
   width: 100%;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -163,26 +162,38 @@ section {
   text-align: center;
 }
 
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1 {
+  font-size: calc(1.3rem + .6vw);
+
+}
 
 /*==========================================
   =            NAVIGATION                  =
   ==========================================*/
 
 #header-navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: 11;
-  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  padding: 1.5rem 0;
-  background-color: transparent;
-  padding: 16px 0;
+  padding: 1rem 2rem;
+  background: var(--linear-gradient-main);
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
+.navbar {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -190,7 +201,7 @@ section {
 
 .navbar-brand {
   color: white;
-  font-size: 40px;
+  font-size: 2rem;
   text-decoration: none;
 }
 
@@ -199,42 +210,47 @@ section {
   margin: 0;
 }
 
+.menu-toggle-checkbox {
+  display: none;
+}
+
 .navbar-toggler {
   font-size: 2rem;
-  color: #fff;
+  color: white;
   background: transparent;
   border: none;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .navbar-collapse {
   display: flex;
+  align-items: center;
 }
 
 .navbar-nav {
   list-style: none;
   display: flex;
+  padding-left: 0;
   margin: 0;
-  padding: 0;
 }
 
 .nav-item {
   margin-left: 20px;
+  padding: 0.5rem;
 }
 
-.nav-link {
+.nav-item a {
   color: white;
   text-decoration: none;
-  transition: .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.nav-link:hover {}
-
-.navbar-nav:hover li a {
-  opacity: 0.5;
-}
-
-.navbar-nav:hover li a:hover {
-  opacity: 1;
+.nav-item a:hover {
+  opacity: 0.7;
 }
 
 .only-desktop {
@@ -343,7 +359,7 @@ section {
   right: 0;
   background: var(--color-tertiary);
   background: -webkit-linear-gradient(to right, var(--color-secondary), var(--color-tertiary));
-  background: linear-gradient(to right, var(--color-secondary), var(--color-tertiary));
+  background: var(--linear-gradient-main);
 }
 
 .bunner h1 {
@@ -578,26 +594,26 @@ section {
 }
 
 .floating-object-2 {
-  top: 30%;
-  left: 20%;
+  top: 50%;
+  left: 15%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 8s infinite;
 }
 
 .floating-object-2 img {
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   transform: rotate(15deg);
 }
 
 .floating-object-3 {
   top: 80%;
-  left: 15%;
+  right: 35%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 10s infinite;
 }
 
 .floating-object-3 img {
-  width: 45px;
-  height: 45px;
+  width: 80px;
+  height: 80px;
   transform: rotate(40deg);
 }
 
@@ -614,32 +630,32 @@ section {
 }
 
 .floating-object-5 {
-  top: 50%;
-  left: 5%;
+  top: 30%;
+  left: 10%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 5s infinite;
 }
 
 .floating-object-5 img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   transform: rotate(-10deg);
 }
 
 .floating-object-6 {
   top: 20%;
-  left: 83%;
+  left: 73%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 5s infinite;
 }
 
 .floating-object-6 img {
-  width: 70px;
-  height: 70px;
+  width: 95px;
+  height: 95px;
   transform: rotate(-180deg);
 }
 
 .floating-object-7 {
   top: 80%;
-  right: 25%;
+  left: 15%;
   animation: fadeInFromTop .5s linear forwards, floating ease-in-out 5s infinite;
 }
 
@@ -655,17 +671,23 @@ section {
 
 .footer {
   margin: 1rem 0;
+  padding: 2rem 1rem;
+  color: #000000;
+  font-family: Arial, sans-serif;
 }
 
 .inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .footer-column {
@@ -674,32 +696,50 @@ section {
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
+  text-align: center;
 }
-
-.column-left,
-.column-right {}
 
 .column-center {
   text-align: center;
 }
 
 .copyright {
+  font-size: 0.875rem;
+  color: #aaa;
   margin: 0;
 }
 
 .footer-nav {
   display: flex;
   justify-content: center;
+  gap: 1rem;
+}
+
+.footer-nav a i {
+  color: var(--color-primary);
+}
+
+.footer-nav a i:hover {
+  color: var(--color-secondary-alt);
 }
 
 .footer-link {
-  margin: 0 0.5rem;
-  color: inherit;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
   text-decoration: none;
+  margin: 0 0.5rem;
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+}
+
+.column-left {
+  text-align: left;
+}
+
+.column-right {
+  text-align: right;
 }
 
 
@@ -707,6 +747,80 @@ section {
   =            MEDIA QUERIES               =
   ==========================================*/
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: inline;
+  }
+
+  .navbar-collapse {
+    display: none;
+    flex-direction: column;
+    background: var(--linear-gradient-main);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .menu-toggle-checkbox:checked~.navbar-collapse {
+    display: flex;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column-left,
+  .column-center,
+  .column-right {
+    text-align: center;
+  }
+}
 
 @media (max-width: 767px) and (orientation: landscape) {
   .bunner {
@@ -717,5 +831,20 @@ section {
 @media (min-width: 768px) {
   .only-desktop {
     display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .bunner h1 {
+    font-size: 6rem;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .progress {
+    height: 30px;
+    font-size: 16px;
   }
 }
