@@ -744,7 +744,7 @@ h1 {
   border-bottom-left-radius: 6px;
 }
 
-.form-control:focus{
+.form-control:focus {
   border: 1px solid var(--on-focus);
   outline: none;
 }
@@ -785,7 +785,7 @@ h1 {
 .introduction-holder {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.25rem;
 }
 
@@ -799,15 +799,15 @@ h1 {
   position: relative;
   overflow: hidden;
   padding: 1rem;
-  background: #fff; 
-  border: 1px solid #ddd; 
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all .2s ease-in-out 0s !important;
 }
 
 .introduction-item:hover .overlay-card {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .image-wrapper {
@@ -831,11 +831,11 @@ h1 {
   background-image: url('../img/border-png.png');
   background-size: cover;
   background-position: center;
-  opacity: 0; 
-  transition: opacity 0.3s ease; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.introduction-item:hover .introduction-content{
+.introduction-item:hover .introduction-content {
   transform: translateY(-40px);
 }
 
@@ -851,10 +851,67 @@ h1 {
   font-size: 0.875rem;
 }
 
-@media (max-width: 768px) {
-  .column {
-      width: 100%;
-  }
+/*==========================================
+  =         NEWSLETTER SECTION             =
+  ==========================================*/
+.newsletter-section {
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  color: #fff;
+  text-align: center;
+  min-height: 300px;
+}
+
+
+.newsletter-container {
+  position: relative;
+  z-index: 1;
+  background-image: var(--linear-gradient-main);
+  opacity: 0.9;
+  padding: 60px 20px;
+}
+
+.section-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+#email-newsletter {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.801);
+  color: #333030;
+  border-radius: var(--radius-28);
+  margin-right: 10px;
+  width: 250px;
+}
+#email-newsletter:hover::placeholder {
+  color: #000;
+}
+
+.newsletter-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: var(--radius-28);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.newsletter-btn:hover {
+  color: #fff;
+  background-color: var(--color-secondary);
 }
 
 /*==========================================
@@ -958,7 +1015,11 @@ h1 {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+
   .container {
     max-width: 720px;
   }
