@@ -10,7 +10,8 @@
   --color-shape-alt: #4A00E0;
   --on-primary: #100e17;
   --background: #131214;
-  --on-focus: #FFD700;
+  --on-focus: #FF00CC;
+  --on-focus-alt: #FFD700;
   --on-background: #eae6f2;
   --surface: #1d1c1f;
   --on-surface: #dddae5;
@@ -152,6 +153,22 @@ section {
 .title-wrap,
 .section-title {
   text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 .shadow {
@@ -665,6 +682,181 @@ h1 {
   transform: rotate(-40deg);
 }
 
+
+/*==========================================
+  =            SIDEBAR SEARCH               =
+  ==========================================*/
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  transition: width 0.5s;
+  padding-top: 60px;
+  color: #fff;
+}
+
+.sidenav-content {
+  padding: 8px 32px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.sidenav.in .sidenav-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: color 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+#side-search-close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group-text span i {}
+
+.form-control {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.form-control:focus{
+  border: 1px solid var(--on-focus);
+  outline: none;
+}
+
+.input-group-text {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.form-control {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-group-text {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+/*================================
+=         INTRODUCTION           =
+================================*/
+.introduction-header {
+  margin-bottom: 5.25rem;
+}
+
+.section-sub-title {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.introduction-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.introduction-item {
+  width: 18.75rem;
+  height: 18.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  background: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all .2s ease-in-out 0s !important;
+}
+
+.introduction-item:hover .overlay-card {
+  opacity: 1; 
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+}
+
+.overlay-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/border-png.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.introduction-item:hover .introduction-content{
+  transform: translateY(-40px);
+}
+
+.introduction-content h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.introduction-content p {
+  text-align: center;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .column {
+      width: 100%;
+  }
+}
+
 /*==========================================
   =           FOOTER SECTION               =
   ==========================================*/
@@ -699,6 +891,11 @@ h1 {
   text-align: center;
 }
 
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+}
+
 .column-center {
   text-align: center;
 }
@@ -731,8 +928,7 @@ h1 {
   margin: 0 0.5rem;
 }
 
-.footer-link:hover {
-}
+.footer-link:hover {}
 
 .column-left {
   text-align: left;
@@ -742,10 +938,19 @@ h1 {
   text-align: right;
 }
 
-
 /*==========================================
-  =            MEDIA QUERIES               =
-  ==========================================*/
+=            MEDIA QUERIES               =
+==========================================*/
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
 
 @media (min-width: 576px) {
   .container {
