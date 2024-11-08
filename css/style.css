@@ -7,6 +7,8 @@
   --color-tertiary: #FF00CC;
   --color-tertiary-alt: #FF78e4;
   --color-shape: #8E2DE2;
+  --color-light: #ffffff;
+  --color-dark: #000000;
   --color-shape-alt: #4A00E0;
   --on-primary: #100e17;
   --background: #131214;
@@ -156,6 +158,7 @@ section {
 }
 
 .section-title {
+  color: var(--color-dark);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -217,7 +220,7 @@ h1 {
 }
 
 .navbar-brand {
-  color: white;
+  color: var(--color-light);
   font-size: 2rem;
   text-decoration: none;
 }
@@ -233,7 +236,7 @@ h1 {
 
 .navbar-toggler {
   font-size: 2rem;
-  color: white;
+  color: var(--color-light);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -261,7 +264,7 @@ h1 {
 }
 
 .nav-item a {
-  color: white;
+  color: var(--color-light);
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -293,39 +296,39 @@ h1 {
   display: inline-block;
   background-color: var(--color-tertiary);
   border-color: var(--color-tertiary);
-  color: #fff;
+  color: var(--color-light);
 }
 
 .btn-primary:hover {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
-  color: #fff;
+  color: var(--color-light);
 }
 
 .btn-outline-primary {
-  color: #fff;
+  color: var(--color-light);
   background-color: transparent;
   background-image: none;
-  border-color: #fff;
+  border-color: var(--color-light);
 }
 
 .btn-outline-primary:hover {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
-  color: #fff;
+  color: var(--color-light);
 }
 
 .btn-outline-secondary {
-  color: #fff;
+  color: var(--color-light);
   background-color: transparent;
   background-image: none;
-  border-color: #fff;
+  border-color: var(--color-light);
 }
 
 .btn-outline-secondary:hover {
-  color: #fff;
+  color: var(--color-light);
   background-color: var(--color-tertiary);
-  color: #fff;
+  color: var(--color-light);
 }
 
 .btn-shadow {
@@ -345,7 +348,7 @@ h1 {
   ==========================================*/
 
 .bunner {
-  color: #fff;
+  color: var(--color-light);
   padding-top: 80px;
   padding-bottom: 80px;
   background-repeat: no-repeat;
@@ -379,24 +382,21 @@ h1 {
   background: var(--linear-gradient-main);
 }
 
-.bunner h1 {
+.bunner h2 {
   line-height: .9;
   font-weight: bold;
   display: inline-block;
-  border: 15px solid #fff;
+  border: 15px solid var(--color-light);
   padding: 30px;
-  font-size: 9rem;
+  font-size: 2rem;
   opacity: 0;
   animation: 1s fadeInFromTop cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s forwards;
   animation-delay: .8s;
 }
 
-.bunner-single h1 {
-  font-size: 3rem !important;
-}
 
 .overlay {
-  color: #fff;
+  color: var(--color-light);
 }
 
 .overlay:before {
@@ -432,12 +432,12 @@ h1 {
 }
 
 .overlay.bg-white:before {
-  background: #fff;
+  background: var(--color-light);
   opacity: .7;
 }
 
 .text-white {
-  color: #fff;
+  color: var(--color-light);
 }
 
 /*==========================================
@@ -698,7 +698,7 @@ h1 {
   overflow-x: hidden;
   transition: width 0.5s;
   padding-top: 60px;
-  color: #fff;
+  color: var(--color-light);
 }
 
 .sidenav-content {
@@ -756,24 +756,26 @@ h1 {
 
 .form-control {
   background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid var(--color-light);
+  color: var(--color-light);
   padding: 10px;
   width: 100%;
 }
 
 .input-group-text {
   background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--color-light);
+  border: 1px solid var(--color-light);
   padding: 10px;
 }
 
 /*================================
 =         INTRODUCTION           =
 ================================*/
+.introduction {
+}
+
 .introduction-header {
-  margin-bottom: 5.25rem;
 }
 
 .section-sub-title {
@@ -799,7 +801,7 @@ h1 {
   position: relative;
   overflow: hidden;
   padding: 1rem;
-  background: #fff;
+  background: var(--color-light);
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -859,7 +861,7 @@ h1 {
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
-  color: #fff;
+  color: var(--color-light);
   text-align: center;
   min-height: 300px;
 }
@@ -886,13 +888,14 @@ h1 {
 #email-newsletter {
   padding: 10px 15px;
   font-size: 1rem;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-light);
   background: rgba(255, 255, 255, 0.801);
   color: #333030;
   border-radius: var(--radius-28);
   margin-right: 10px;
   width: 250px;
 }
+
 #email-newsletter:hover::placeholder {
   color: #000;
 }
@@ -900,9 +903,9 @@ h1 {
 .newsletter-btn {
   padding: 10px 20px;
   font-size: 1rem;
-  color: #fff;
+  color: var(--color-light);
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-light);
   border-radius: var(--radius-28);
   cursor: pointer;
   text-decoration: none;
@@ -910,8 +913,141 @@ h1 {
 }
 
 .newsletter-btn:hover {
-  color: #fff;
+  color: var(--color-light);
   background-color: var(--color-secondary);
+}
+
+/*==========================================
+  =       GASTRONOMIES SECTION             =
+  ==========================================*/
+
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--color-light);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gastronomies {
+  display: flex;
+  flex-direction: column;
+}
+
+.gastronomy {
+  position: relative;
+  padding: 50px 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.gastronomy.overlay {
+  position: relative;
+  background-image: url('img/bg-1.jpg');
+  background-size: cover;
+}
+
+.gastronomy.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--linear-gradient-main);
+  z-index: 1;
+}
+
+.gastronomy.overlay>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+.overlay {
+  background-color: var(--linear-gradient-main);
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+}
+
+.content-alt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+}
+
+.gastronomy-item {
+  padding: 20px;
+  color: var(--color-light);
+}
+
+.gastronomy-item h4 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--color-light);
+}
+
+.gastronomy-item p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.gastronomy-item.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gastronomy-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: 2px solid var(--color-light);
+  border-radius: var(--radius-28);
+  color: var(--color-light);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-light);
+}
+
+.custom-button-alt {
+  background-color: transparent;
+  border: 2px solid var(--color-light);
+  border-radius: var(--radius-28);
+  color: var(--color-light);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.custom-button-alt:hover {
+  background-color: var(--color-secondary-alt);
+  color: var(--color-light);
 }
 
 /*==========================================
@@ -978,7 +1114,7 @@ h1 {
 }
 
 .footer-link {
-  color: #fff;
+  color: var(--color-light);
   font-size: 1.5rem;
   transition: color 0.3s;
   text-decoration: none;
@@ -1006,6 +1142,12 @@ h1 {
 
   .sidenav a {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .newsletter-btn {
+    margin-top: 0.75rem;
   }
 }
 
@@ -1086,6 +1228,35 @@ h1 {
   .column-right {
     text-align: center;
   }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .content-alt {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .gastronomy-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gastronomy-item p {
+    text-align: justify;
+  }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -1101,8 +1272,8 @@ h1 {
 }
 
 @media (max-width: 767px) {
-  .bunner h1 {
-    font-size: 6rem;
+  .bunner h2 {
+    font-size: 1.6rem;
   }
 
   .grid-item {
